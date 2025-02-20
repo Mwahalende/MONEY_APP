@@ -10,10 +10,10 @@ app.use(cors());
 const PORT = 5000;
 
 // Thamani za AzamPay (weka thamani zako halisi hapa)
-const AZAMPAY_APP_NAME = 'jina_la_programu_yako';
-const AZAMPAY_CLIENT_ID = 'client_id_yako';
-const AZAMPAY_CLIENT_SECRET = 'client_secret_yako';
-const AZAMPAY_API_KEY = 'api_key_yako';
+const AZAMPAY_APP_NAME = 'LEO SHOPS';
+const AZAMPAY_CLIENT_ID = 'be3d79ef-8fc0-4fa0-a56f-a885041e7f0e';
+const AZAMPAY_CLIENT_SECRET = 'VDX8v8O7e0H2XbzVLRh/qLxalr2IE7QROdbywwcIcS2bIj0nz8Biadn3wK9YVMU6tNGigTdxShdupLrDjfh5gE3cszK5IhiWFbJgiMBwohKrRLRwO5k1IS93sDiFu/tz5paf74VYdMjWx3BQcfCIJbGDTnLFeVNcw9UJP0m+C8ZjKkfKq3tARfSclNRCqIJ7vVHKTdpa4lG56jjhO1UHf9nJolc2nJkJEtXBNwM9T7VRvjh1P0ufbrThkCXuHRJRDoXL8P6lI2GN0pjKoMFRTwlHdNCe9vv29rApgHlDR2ENwoIJOLrfztB1aWK75SSxG5JMum9+PKJYWlnyAYHMez8zFWAOF11wwWu2AlIxcMM4uFfM8XCkMxP7UVkWusaYaehvcJgw75uDKHb3jGxGJQcS1ekJRdKj3YIeQz0+eygN7qYG4hPWwoPEtERf3dFnAOkPYiv6L0i5oNSEKrPdCPCr03ojR30HMTSpY9SrPrdglLuerIeT/2GsqYLPIozCWBolZr0WOos2bF7LyXF3y6lmB7+4L11L3rJyt25aSWt81oHE2/gFsNVAw5n47Zn4araqvCT6BEdFKWDru7Lpar9oOy4s3T4mezcIvlofhCrRlbGL4CqvkgpVPXWu4WRjcQQdU/xa6pOn6z0/2p008VjO4/wqzjqP2y9z/3wQyMg=';
+const AZAMPAY_API_KEY = '1d4ebbcc-c9dc-4ee3-84d8-f7156f5e6055';
 
 app.get('/', (req, res) => {
     res.send('Karibu kwenye Duka la PCB');
