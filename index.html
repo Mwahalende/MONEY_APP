@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duka la PCB</title>
+</head>
+<body>
+    <h1>Karibu kwenye Duka la PCB</h1>
+    <p>Chagua PCB unayotaka kununua:</p>
+
+    <ul>
+        <li>
+            <h3>PCB Ndogo</h3>
+            <p>Bei: 2000 TZS</p>
+            <button onclick="makePayment(2000)">Nunua</button>
+        </li>
+        <li>
+            <h3>PCB ya Kati</h3>
+            <p>Bei: 3000 TZS</p>
+            <button onclick="makePayment(3000)">Nunua</button>
+        </li>
+        <li>
+            <h3>PCB Kubwa</h3>
+            <p>Bei: 4000 TZS</p>
+            <button onclick="makePayment(4000)">Nunua</button>
+        </li>
+    </ul>
+
+    <label for="phone">Ingiza Namba Yako ya Simu:</label>
+    <input type="text" id="phone" placeholder="255XXXXXXXXX" required>
+    <br><br>
+
+    <script>
+        function makePayment(amount) {
+            const phoneNumber = document.getElementById("phone").value;
+
+            if (!phoneNumber) {
+                alert("Tafadhali ingiza namba ya simu kwanza!");
+                return;
+            }
+
+            fetch('http://localhost:5000/pay', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ amount, phoneNumber })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.payment_url) {
+                    window.location.href = data.payment_url;
+                } else {
+                    alert("Malipo yameshindwa. Tafadhali jaribu tena.");
+                }
+            })
+            .catch(error => {
+                console.error('Hitilafu:', error);
+                alert("Hitilafu ya mtandao. Tafadhali jaribu tena.");
+            });
+        }
+    </script>
+</body>
+</html>
